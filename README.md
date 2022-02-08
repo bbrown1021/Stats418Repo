@@ -48,4 +48,15 @@ Inside q5 directory, **Command Line:**
 5.2 - Store 2   
 5.3 Stores 8, 9, and 10   
 5.4 -  Store 2  
-5.5 - 37th week of the year  
+5.5 - 37th week of the year   
+
+### Segment 6  
+
+```main.py	``` utilizes the example input 2D arrays found in ```data.py``` which can be opened and customized by user
+
+Inside q6 directory, **Command Line:**  
+``` python3 main.py```
+
+**Output:**  
+- various numpy arrays   
+- a new file ```input_array.npy``` of the saved array used in current example
