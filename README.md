@@ -72,3 +72,8 @@ Inside q6 directory, **Command Line:**
 **Output:**  
 - various numpy arrays   
 - a new file ```input_array.npy``` of the current example array in q6 directory
+
+
+### Segment 7.2 Extra Credit
+
+Due to my music background, I chose the following Kaggle dataset (https://www.kaggle.com/vageeshabudanur/songdetails) which contains songs from the 1990-2010 top 10 of the Billboard Hot 100 as well as songs that did not make the list (for comparison). Some variables include artist, time signature, loudness, key, pitch, tempo, and timbre. In the q7 directory, you will find the data under ```songs.csv``` and an extensive EDA in the notebook ```musicEDA.ipynb```.
