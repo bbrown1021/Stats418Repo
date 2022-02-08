@@ -1,5 +1,5 @@
 # create database
-.open db.sqlite3
+.open ../db.sqlite3
 .databases
 
 .headers ON
