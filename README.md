@@ -72,5 +72,4 @@ Inside q6 directory, **Command Line:**
 **Output:**  
 - all numpy arrays for the main assignment
 - all numpy arrays for the ***bonus assignments*** including
--   a new file ```input_array.npy``` of the current example array in q6 directory
-- various numpy arrays for the binus
+  - a new file ```input_array.npy``` of the current example array in q6 directory
