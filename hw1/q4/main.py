@@ -37,23 +37,18 @@ print("----------------------------------------------------------")
 conn = sqlite3.connect('../db.sqlite3')
 print("Successfully Connected to SQL Database:")
 
+# # -------------------------------- #
+# # Export Data into Pandas DataFrame
+# # -------------------------------- #
 df_sql = pd.read_sql('SELECT saleDate,sale,name FROM sales INNER JOIN stores ON stores.storeId = sales.store ', conn)
 print(df_sql)
 print("----------------------------------------------------------")
 print("Successfully Export Data into Pandas Dataframe:")
 df2 = df_sql.pivot(index = 'saleDate', columns = 'name', values = 'sale').reset_index()
 df2.rename(columns={'saleDate': 'Date'}, inplace=True)
-df = df2[["Date","S1","S2","S3","S4","S5","S6","S7","S8","S9","S10"]]
-print(df)
-
-
-# # -------------------------------- #
-# # Export Data into Pandas DataFrame
-# # -------------------------------- #
-
+df1 = df2[["Date","S1","S2","S3","S4","S5","S6","S7","S8","S9","S10"]]
 df = pd.read_csv('TV-Sales.csv')
-# # print(df.head(10)) # view data
-
+print(df)
 # make Date column into 'datetime' type
 df['Date'] = pd.to_datetime(df['Date'])
 
