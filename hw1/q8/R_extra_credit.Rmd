@@ -86,7 +86,7 @@ write.csv(new_data,"repaired.csv", row.names = FALSE)
 
 ## 4.7	After imputing the missing values, plot the cumulative sale of each store as a function of time. Your plot should have a legend, a grid along the y-axis with a cell size of 10, labeled y-ticks at each multiple of 10, and x-ticks corresponding to the first days of each quarter (3 month period). Save the plot as hw1/q4/plot.png.
 
-```{r}
+```{r message=FALSE, warning = FALSE}
 cumData <- cbind(Date = new_data[,1],cumsum(new_data[,-1]))
 
 # define color palette
@@ -124,23 +124,61 @@ legend("topleft",
 dev.off()
 ```
 
+## 5.2	Which store makes the maximum sales on Sundays?
 ```{r}
-daily.pnl <- cars
-nn <- ncol(daily.pnl)
-layout(matrix(c(1,2),nrow=1), width=c(4,1)) 
-par(mar=c(5,4,4,0)) #No margin on the right side
-matplot(cumsum(as.data.frame(daily.pnl)),type="l")
-par(mar=c(5,0,4,2)) #No margin on the left side
-plot(c(0,1),type="n", axes=F, xlab="", ylab="")
-legend("center", colnames(daily.pnl),col=seq_len(nn),cex=0.8,fill=seq_len(nn))
+df$day <- weekdays(df$Date)
+df2 <- df[which(df$day == "Sunday"),-1]
+df3 <- colSums(df2[,1:10], na.rm = TRUE)
+rownames(as.data.frame(df3[order(-df3)][1]))
 ```
 
+## 5.3	Find all stores with total sales in December lower than those of S5.
 ```{r}
- dat <- matrix(runif(40,1,20),ncol=4) # make data
-dat
- matplot(dat, type = c("b"),pch=1,col = 1:4) #plot
- legend("topleft", legend = 1:4, col=1:4, pch=1) # optional legend
+totalsales <- df_dates[which(df_dates$month == 12),-1]
+totalsales <- data.frame(means = colSums(totalsales[,1:10], na.rm = TRUE))
+totalsales$store <- rownames(totalsales)
+rownames(totalsales) <- NULL
+orderedsales <- totalsales[order(totalsales$means),]
+orderedsales[c(1:3),2]
 ```
 
+## 5.4	Which store recorded the highest number of sales for the largest number of days?
+```{r warning = FALSE}
+df2 <- original
+df2[is.na(df2)] <- 0 # replace NA with 0
+tbl <- table(colnames(df2[,-1])[max.col(df2[,-1],ties.method="last")])
+rownames(as.data.frame(tbl[order(-tbl)][1]))
+```
+
+\newpage
+
+## 5.5	What week in 2019 has the highest total sales across all the stores?
+```{r}
+df3 <- df[,1:11]
+df3$Week <- as.numeric(strftime(df3$Date, format = "%V")) - 1 # to match python syntax
+df3$Year <- strftime(df3$Date, format = "%Y")
+df3 <- df3[which(df3$Year == "2019"),-1]
+df3 <- df3[,1:11]
+
+df3 <- df3 %>% 
+  group_by(Week) %>% 
+  summarise(S1 = sum(S1),
+            S2 = sum(S2),
+            S3 = sum(S3),
+            S4 = sum(S4),
+            S5 = sum(S5),
+            S6 = sum(S6),
+            S7 = sum(S7),
+            S8 = sum(S8),
+            S9 = sum(S9),
+            S10 = sum(S10))
+
+df3$totals <- rowSums(df3[,2:11], na.rm = TRUE)
+
+final <- df3[which(df3$totals == max(df3$totals)),c("Week","totals")]
+final$Week
+
+# 2019-09-16 to 2019-09-22
+```
 
 
