@@ -18,9 +18,12 @@ Flask project is deployed here: http://stats418hello505119082world.azurewebsites
 
 After installing VirtualBox 6.1 on my Mac OS, I then setup a Linux environment using the latest LTS version of Ubuntu. View screenshots of my VirtualBox setup and Linux desktop in the q3 directory. 
 
-![](https://github.com/bbrown1021/Stats418Repo/blob/HW1/q3/VirtualBox_screenshot.png?raw=true)
+![](https://github.com/bbrown1021/Stats418Repo/blob/HW1/hw1/q3/VirtualBox_screenshot.png?raw=true)
+
 
 In the Linux command line, ```./setup.sh``` will install all necessary packages. A copy of this script can be found in q3 directory. 
+
+![](hw1/q3/VirtualBox_screenshot.png?raw=true "Title")
 
 ### Segment 4
 
