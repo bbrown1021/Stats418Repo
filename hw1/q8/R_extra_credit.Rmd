@@ -86,7 +86,7 @@ write.csv(new_data,"repaired.csv", row.names = FALSE)
 
 ## 4.7	After imputing the missing values, plot the cumulative sale of each store as a function of time. Your plot should have a legend, a grid along the y-axis with a cell size of 10, labeled y-ticks at each multiple of 10, and x-ticks corresponding to the first days of each quarter (3 month period). Save the plot as hw1/q4/plot.png.
 
-```{r message=FALSE, warning = FALSE}
+```{r echo = T, results = 'hide'}
 cumData <- cbind(Date = new_data[,1],cumsum(new_data[,-1]))
 
 # define color palette
@@ -176,9 +176,8 @@ df3 <- df3 %>%
 df3$totals <- rowSums(df3[,2:11], na.rm = TRUE)
 
 final <- df3[which(df3$totals == max(df3$totals)),c("Week","totals")]
+# corresponds to the week from 2019-09-16 to 2019-09-22, matches to sql segment
 final$Week
-
-# 2019-09-16 to 2019-09-22
 ```
 
 
