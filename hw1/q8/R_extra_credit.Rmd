@@ -1,0 +1,146 @@
+---
+title: "Segment 8 Extra Credit"
+author: "Britney Brown"
+date: "2/8/2022"
+output: pdf_document
+---
+
+```{r message = FALSE}
+library(tidyverse)
+library(dplyr)
+```
+
+```{r warning = FALSE}
+original <-  read.csv("TV-Sales.csv", stringsAsFactors=FALSE)
+df <- original
+
+# change to numeric 
+change_to_int <- colnames(df)[-1]
+for(i in 1:length(change_to_int)){
+  df[,change_to_int[i]] <- as.numeric(df[,change_to_int[i]])}
+
+# converting to datetime object
+df[['Date']] <- as.POSIXct(df[['Date']],format = "%Y-%m-%d")
+
+head(df)
+```
+## 4.1	Which store had the highest mean sale in 2017?
+```{r}
+df_dates <- df %>% dplyr::mutate(year = lubridate::year(Date), 
+                                 month = lubridate::month(Date), 
+                                 day = lubridate::day(Date))
+
+df_2017 <- df_dates[which(df_dates$year == 2017),-c(1,12,13,14)]
+
+means_2017 <- as.data.frame(colMeans(df_2017, na.rm = TRUE))
+means_2017 <- cbind(store = rownames(means_2017), means_2017)
+colnames(means_2017)[2] <- "means"
+means_2017[which(means_2017$means == max(means_2017$means)),1]
+```
+
+## 4.2	Which day showed the highest variance in sales across different stores?
+```{r message = FALSE}
+library(matrixStats)
+dailyvar <- rowVars(as.matrix(df[,-1]), na.rm = TRUE)
+maxvar <- max(dailyvar)
+df[which(dailyvar == maxvar),'Date']
+```
+
+## 4.3	Which year showed the highest median sale for the store S5?
+```{r}
+df$Year <- format(df$Date, format="%Y")
+highest_mean <- df %>% select(S5,Year) %>% group_by(Year) %>% 
+  summarise(median = median(S5,na.rm = TRUE))
+
+as.numeric(highest_mean[which(highest_mean$median == max(highest_mean$median)),'Year'])
+```
+
+## 4.4	Which store recorded the highest number of sales for the largest number of days?
+```{r warning = FALSE}
+df2 <- original
+df2[is.na(df2)] <- 0 # replace NA with 0
+tbl <- table(colnames(df2[,-1])[max.col(df2[,-1],ties.method="last")])
+rownames(as.data.frame(tbl[order(-tbl)][1]))
+```
+
+## 4.5	Which store ranks 5th in the cumulative number of units sold over the 3-year interval?
+```{r warning = FALSE, message = FALSE}
+stores <- as.data.frame(sapply(original[,-1],as.numeric))
+cumSales <- colSums(stores, na.rm = TRUE)
+rownames(as.data.frame(cumSales[order(-cumSales)][5]))
+```
+
+\newpage
+## 4.6	Your program should create a file named repaired.csv in the directory which contains the same data as TV-Sales.csv, but with “N/A” values replaced with the median sale of that store, over the entire 3-year interval. Retain the header row found in TV-Sales.csv.
+
+```{r}
+medians <- as.numeric(apply(stores, 2, median, na.rm = TRUE))
+
+for(i in 1:10){
+  stores[,i][is.na(stores[,i])] <- medians[i]
+}
+
+new_data <- cbind(Date = original[,1],stores)
+write.csv(new_data,"repaired.csv", row.names = FALSE)
+```
+
+## 4.7	After imputing the missing values, plot the cumulative sale of each store as a function of time. Your plot should have a legend, a grid along the y-axis with a cell size of 10, labeled y-ticks at each multiple of 10, and x-ticks corresponding to the first days of each quarter (3 month period). Save the plot as hw1/q4/plot.png.
+
+```{r}
+cumData <- cbind(Date = new_data[,1],cumsum(new_data[,-1]))
+
+# define color palette
+library(RColorBrewer)
+n <- 10
+qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+col=sample(col_vector, n)
+
+jpeg(file="extra_plot.jpeg")
+matplot(y = cumData[,-1], type = 'l', 
+        xlab = "Date", 
+        ylab = "Cumulative Sales", 
+        col=col,
+        axes = FALSE)
+
+yticks <- seq(0,80000, 10000)
+axis(2,at=yticks,labels=T, las = 2, cex.axis = 0.8)
+
+xticks <- seq(0,1100, 90)
+xlabs <- c("Jan17","Apr17", "July17","Oct17",
+           "Jan18","Apr18", "July18","Oct18",
+           "Jan19","Apr19", "July19","Oct19","Jan20")
+
+       
+axis(1,at=xticks,labels=xlabs, las = 2, cex.axis = 0.8)
+
+grid(NULL,NULL)
+
+legend("topleft", 
+       colnames(cumData[,-1]),
+       col=col,
+       cex=0.7,
+       fill=col)
+dev.off()
+```
+
+```{r}
+daily.pnl <- cars
+nn <- ncol(daily.pnl)
+layout(matrix(c(1,2),nrow=1), width=c(4,1)) 
+par(mar=c(5,4,4,0)) #No margin on the right side
+matplot(cumsum(as.data.frame(daily.pnl)),type="l")
+par(mar=c(5,0,4,2)) #No margin on the left side
+plot(c(0,1),type="n", axes=F, xlab="", ylab="")
+legend("center", colnames(daily.pnl),col=seq_len(nn),cex=0.8,fill=seq_len(nn))
+```
+
+```{r}
+ dat <- matrix(runif(40,1,20),ncol=4) # make data
+dat
+ matplot(dat, type = c("b"),pch=1,col = 1:4) #plot
+ legend("topleft", legend = 1:4, col=1:4, pch=1) # optional legend
+```
+
+
+
