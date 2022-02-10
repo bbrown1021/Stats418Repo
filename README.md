@@ -2,7 +2,7 @@
 
 Britney Brown (505-119-082)
 
-## Additional Information for Problem Set 1
+## Problem Set 1
 
 ### Segment 1
 
@@ -12,18 +12,16 @@ A screenshot of this repository's gitignore can be found in the q1 directory.
 
 ### Segment 2
 
-Flask project is deployed here: http://stats418hello505119082world.azurewebsites.net/ 
+The 'Hello World' Flask project is deployed here: http://stats418hello505119082world.azurewebsites.net/. The app code can be found in q2 along with the submodule used to deploy to Azure. 
 
 ### Segment 3
 
 After installing VirtualBox 6.1 on my Mac OS, I then setup a Linux environment using the latest LTS version of Ubuntu. 
 
-![](hw1/q3/VirtualBox_screenshot.png?raw=true "Title")
-![](hw1/q3/screenshot.png?raw=true "Title")
-
+![](hw1/q3/VirtualBox_screenshot.png?raw=true "VirtualBox_setup")
+![](hw1/q3/screenshot.png?raw=true "Linux_environment"). 
 
 In the Linux command line, ```./setup.sh``` will install all necessary packages. A copy of this script can be found in q3 directory. 
-
 
 ### Segment 4
 
@@ -38,7 +36,7 @@ Inside q4 directory, **Command Line:**
 4.2 - 2017-11-07  
 4.3 - 2019  
 4.4 - Store 2  
-4.5 - S7  
+4.5 - Store 7   
 - successful creation of new csv file in q4 directory
 - successful creation of plot in q4 directory
 
@@ -79,14 +77,12 @@ Inside q6 directory, **Command Line:**
 - all numpy arrays for the ***bonus assignments*** including
   - a new file ```input_array.npy``` of the current example array in q6 directory
 
-
 ## Extra Credit
 
-### Segment 7.2 
+### Segment 7
 
 Due to my music background, I chose the following Kaggle dataset (https://www.kaggle.com/vageeshabudanur/songdetails) which contains songs from the 1990-2010 top 10 of the Billboard Hot 100 as well as songs that did not make the list (for comparison). Some variables include artist, time signature, loudness, key, pitch, tempo, and timbre. In the q7 directory, you will find the data under ```songs.csv``` and an extensive EDA in the notebook ```musicEDA.ipynb```.
 
 ### Segment 8
 
 Navigate to the q8 directory for the TV sales analysis performed in R which includes all questions/queries from segments 4 and 5, as well as the bonus plot from segment 4. The notebook can be viewed at ```R_extra_credit.Rmd``` and the rendered document is viewable at ```R_extra_credit.pdf```. Note that a dataset with imputed missing values was generated under the name ```repaired.csv``` and the extra credit plot is saved at ```extra_plot.jpeg``` as well.
-
