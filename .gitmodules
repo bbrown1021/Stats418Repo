@@ -1,0 +1,3 @@
+[submodule "hw1/q2/flask_project"]
+	path = hw1/q2/flask_project
+	url = https://stats418hello505119082world.scm.azurewebsites.net:443/stats418hello505119082world.git
