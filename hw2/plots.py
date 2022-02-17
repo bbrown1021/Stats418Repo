@@ -76,4 +76,4 @@ ax1.axhline(y = df2['rating'].mean(), color = 'r', linestyle = 'dashed')
 
 # save figure 
 fig.tight_layout()
-plt.savefig('matplot_plot.png')
+plt.savefig('matplotlib_plot.png')
