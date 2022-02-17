@@ -4,7 +4,9 @@ Britney Brown (505-119-082)
 
 ## Problem Set 2
 
-Inside the hw2 directory, run ```sqlite3 < create_tables.sql``` to create a local database *movieratings.db*. To populate the *Movies* table in this database, run ```python3 populate.py``` to read in the *movies.csv* file and import the data. Finally, run ```sqlite3 < queries.sql``` to print the counts of movies with at least 1000 votes, grouped by their rating bin. 
+Inside the hw2 directory, run ```sqlite3 < create_tables.sql``` to create a local database ***movieratings.db***. To populate the **Movies* table in this database, run ```python3 populate.py``` to read in the *movies.csv* file and import the data. Finally, run ```sqlite3 < queries.sql``` to print the counts of movies with at least 1000 votes, grouped by their rating bin. 
+
+![](hw2/matplot_plot.png?raw=true "Matplot Graph")
 
 ## Problem Set 1
 
