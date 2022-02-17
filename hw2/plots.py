@@ -51,6 +51,7 @@ for x in years:
 # save summerised info as dataframe
 intervals = pd.DataFrame(rows, columns=["lower", "upper"])
 df2 = pd.concat([df2,intervals], axis = 1)
+df2["error"] = (intervals['upper'] - intervals['lower'])/2
 
 # define plot
 fig, (ax1, ax2) = plt.subplots(2, figsize = (18,10))
@@ -65,7 +66,7 @@ ax2.grid(which='both', axis = "y")
 
 # plot the average ratings of movies in each year as a scatter plot (on top)
 # add error bars corresponding to 95% intervals (calculated above)
-ax1.errorbar(df2['year'], df2['rating'], yerr=(intervals['upper'] - intervals['lower'])/2, fmt="o", color = 'orange')
+ax1.errorbar(df2['year'], df2['rating'], yerr=df2['error'], fmt="o", color = 'orange')
 ax1.set( ylabel='Average Rating of Top 250 Movies')
 ax1.set_xticks([])
 ax1.set_yticks(pd.Series(np.arange(4,15,1)))
@@ -77,3 +78,51 @@ ax1.axhline(y = df2['rating'].mean(), color = 'r', linestyle = 'dashed')
 # save figure 
 fig.tight_layout()
 plt.savefig('matplotlib_plot.png')
+
+
+## Extra Credit 2
+# Create the plot described in Question 4 using only plotly.
+import plotly
+import plotly.express as px
+
+fig1 = px.scatter(df2, y="rating", x="year", error_y="error",
+                 labels={"year": "Year",
+                        "rating": "Average Rating of Top 250 Movies"})
+fig1.update_traces(marker={'size': 10})
+fig1.add_hline(y=df2['rating'].mean(), line_dash="dash", line_color="red")
+
+fig1.update_layout(
+    xaxis = dict(
+        tickmode = 'linear',
+        dtick = 5,
+        tickangle = 90
+    ),
+    yaxis = dict(
+        tickmode = 'linear',
+        dtick = 1,
+    )
+)
+
+fig2 = px.bar(df2, x='year', y='title',
+             labels={"year": "Year",
+                     "title": "Number of Top 250 Movies"
+                 })
+
+fig2.update_layout(
+    xaxis = dict(
+        tickmode = 'linear',
+        tick0 = 100,
+        dtick = 5,
+        tickangle = 90
+    )
+)
+
+def figures_to_html(figs, filename="plotly_dashboard.html"):
+    dashboard = open(filename, 'w')
+    dashboard.write("<html><head></head><body>" + "\n")
+    for fig in figs:
+        inner_html = fig.to_html().split('<body>')[1].split('</body>')[0]
+        dashboard.write(inner_html)
+    dashboard.write("</body></html>" + "\n")
+    
+figures_to_html([fig1, fig2])

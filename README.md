@@ -6,8 +6,13 @@ Britney Brown (505-119-082)
 
 Inside the hw2 directory, run ```sqlite3 < create_tables.sql``` to create a local database ***movieratings.db***. To populate the **Movies* table in this database, run ```python3 populate.py``` to read in the *movies.csv* file and import the data. Finally, run ```sqlite3 < queries.sql``` to print the counts of movies with at least 1000 votes, grouped by their rating bin. 
 
-### Matplotlib Plot
+When it comes to the release year constraint for the **Movies* table, all movies are released between 1887 and 2021. This is because celluloid was developed as a base for photographic emulsions in 1887 by Hannibal Goodwin, forever changing the motion-picture camera and the film industry as we know it. 
+
+### Matplotlib 
 ![](hw2/matplotlib_plot.png?raw=true "Matplot Graph")
+
+### Plotly
+plotly_dashboard.html
 
 ## Problem Set 1
 
