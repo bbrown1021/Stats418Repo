@@ -12,7 +12,7 @@ When it comes to the release year constraint for the **Movies* table, all movies
 ![](hw2/matplotlib_plot.png?raw=true "Matplot Graph")
 
 ### Extra Credit- Plotly
-[Dashbaord] (https://github.com/bbrown1021/Stats418Repo/blob/HW2/hw2/plotly_dashboard.html)
+[Dashbaord] (https://github.com/bbrown1021/Stats418Repo/HW2/hw2/plotly_dashboard.html)
 
 ## Problem Set 1
 
