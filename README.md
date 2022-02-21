@@ -13,6 +13,8 @@ When it comes to the release year constraint for the **Movies* table, all movies
 
 ### Plotly (Extra Credit)
 View the interactive plot here: ```plotly_dashboard.html```
+![](hw2/screenshots/scatterplot.png?raw=true "Plotly Scatterplot")
+![](hw2/screenshots/barchart.png?raw=true "Plotly Bar Chart")
 
 # Problem Set 1
 
