@@ -33,6 +33,19 @@ Finally, when it comes to extracting better features, there are a multitude of o
 
 In addition to some of these specific methods, my main recommendation would be to explore supervised dimension reduction techniques since we are given the labels for each image in the CIFAR-10 dataset. This might allow us to narrow in on some patterns that the unspervised methods cannot pick up on.  
 
+### Question 2
+
+Below is a dataframe containing the averaged precision, recall, f1-score, and accuracy of all four classifiers:  
+- Linear SVC
+- Logistic Regression Classifier
+- K-nearest Neighbors Classifier
+- Perceptron  
+In general, it appears that the linear support vector classification performs the best with over 50% for all metrics. 
+
+![](hw3/images/question2.png?raw=true "VariousMetrics")
+
+*Note*: The prediction arrays of all four classification methods can be found in the ```results``` directory under their respective model names.  
+
 ## Problem Set 1
 
 ### Segment 1
