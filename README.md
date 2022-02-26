@@ -4,15 +4,22 @@ Britney Brown (505-119-082)
 
 # Problem Set 2
 
-Inside the hw2 directory, run ```sqlite3 < create_tables.sql``` to create a local database ***movieratings.db***. To populate the **Movies* table in this database, run ```python3 populate.py``` to read in the *movies.csv* file and import the data. Finally, run ```sqlite3 < queries.sql``` to print the counts of movies with at least 1000 votes, grouped by their rating bin. 
+## Question 1 and 2
 
-When it comes to the release year constraint for the **Movies* table, all movies are released between 1887 and 2021. This is because celluloid was developed as a base for photographic emulsions in 1887 by Hannibal Goodwin, forever changing the motion-picture camera and the film industry as we know it. 
+Inside the hw2 directory, run ```sqlite3 < create_tables.sql``` to create a local database ***movieratings.db***. To populate the *Movies* table in this database, run ```python3 populate.py``` to read in the given *movies.csv* file and import the data. Finally, run ```sqlite3 < queries.sql``` to print the counts of movies with at least 1000 votes. The resulting query is:  
+
+![](hw2/screenshots/query_result.png?raw=true "Query Result")
+
+When it comes to the release year constraint for the *Movies* table, all movies are released between 1887 and 2021. This is because celluloid was developed as a base for photographic emulsions in 1887 by Hannibal Goodwin, forever changing the motion-picture camera and the film industry as we know it. 
+
+## Question 4 and Extra Credit 2
+
+To create the scatterplot and barchart shown below, run ```python3 plots.py``` to create ***matplotlib_plot.png*** and the interactive ***plotly_dashboard.html***. 
 
 ### Matplotlib 
 ![](hw2/matplotlib_plot.png?raw=true "Matplot Graph")
 
-### Plotly (Extra Credit)
-View the interactive plot here: ```plotly_dashboard.html```
+### Plotly (Extra Credit 2)
 ![](hw2/screenshots/scatterplot.png?raw=true "Plotly Scatterplot")
 ![](hw2/screenshots/barchart.png?raw=true "Plotly Bar Chart")
 

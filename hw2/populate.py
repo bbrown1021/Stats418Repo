@@ -10,7 +10,7 @@ CSV_FILE_PATH = 'movies.csv'
 
 def connect_to_db(db_file):
     """
-    Connect to an SQlite database and returns a sqlite3 connection
+    Connect to SQlite database and return a sqlite3 connection
     """
     sqlite3_conn = None
 
@@ -26,7 +26,7 @@ def connect_to_db(db_file):
 
 def get_column_names_from_db_table(sql_cursor, table_name):
     """
-    scrape the column names from a database table to a list and returns a list with table column names
+    Scrape and return the column names from a table into a list
     """
 
     table_column_names = 'PRAGMA table_info(' + table_name + ');'
@@ -34,7 +34,6 @@ def get_column_names_from_db_table(sql_cursor, table_name):
     table_column_names = sql_cursor.fetchall()
 
     column_names = list()
-
     for name in table_column_names:
         column_names.append(name[1])
 
@@ -42,24 +41,23 @@ def get_column_names_from_db_table(sql_cursor, table_name):
 
 def insert_values_to_table(table_name, csv_file):
     """
-    1. open a csv file with pandas
-    2. store its content in a pandas data frame
-    3. change the data frame headers to the table's column names
-    4. insert the data to the table
+    1. Open csv file with pandas
+    2. Store data into a pandas dataframe
+    3. Add table's column names as data frame headers
+    4. Insert data into table
     """
 
     conn = connect_to_db(DB_FILE_PATH)
 
     if conn is not None:
         c = conn.cursor()
-
         df = pd.read_csv(csv_file)
 
         ###############################################
 		# reshape original data to match table schema #
 		###############################################
         df = df[['title','year','plot','genre','rating','numvotes']] # reorder columns
-        df.reset_index(inplace=True) # add an id column
+        df.reset_index(inplace=True) # add unique id column
 
         df.columns = get_column_names_from_db_table(c, table_name)
 

@@ -13,11 +13,6 @@ CREATE TABLE IF NOT EXISTS Movies (
 	NumberOfVotes INTEGER
 );
 
--- # populate movies table
--- DELETE FROM "Movies"; -- verify table is empty
--- .mode csv
--- .import clean_movies.csv Movies --skip 1
-
 # create users table
 CREATE TABLE IF NOT EXISTS Users (
 	UserId INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
