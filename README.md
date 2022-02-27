@@ -12,6 +12,17 @@ Inside the hw2 directory, run ```sqlite3 < create_tables.sql``` to create a loca
 
 When it comes to the release year constraint for the *Movies* table, all movies are released between 1887 and 2021. This is because celluloid was developed as a base for photographic emulsions in 1887 by Hannibal Goodwin, forever changing the motion-picture camera and the film industry as we know it. 
 
+## Question 3
+
+Using Terminal, navigate inside the **flask_app_code** directory and run  ```flask run```. 
+
+There are two functionalities on this API:  
+	1) Search for a Movie. 
+		Type a movie title and if it is on the Top 250 list, you will see a XML output of various film attributes as well as the official movie poster. Please note that this search is case-sensative and spelling-sensative. 
+	2) Submit a Rating for a Movie.  
+		Insert a username, movie title, and valid rating (integer from 1 to 10). The site will return an error code to help users adjust their ratings. This information will be saved and added to the *Users* and *Ratings* tables in ***movieratings.db***.    
+
+
 ## Question 4 and Extra Credit 2
 
 To create the scatterplot and barchart shown below, run ```python3 plots.py``` to create ***matplotlib_plot.png*** and the interactive ***plotly_dashboard.html***. 
