@@ -18,9 +18,13 @@ Using Terminal, navigate inside the **flask_app_code** directory and run  ```fla
 
 There are two functionalities on this API:  
 	1) Search for a Movie. 
-		Type a movie title and if it is on the Top 250 list, you will see a XML output of various film attributes as well as the official movie poster. Please note that this search is case-sensative and spelling-sensative. 
+		- Type a movie title and if it is on the Top 250 list, you will see a XML output of various film attributes as well as the official movie poster. Please note that this search is case-sensative and spelling-sensative.   
 	2) Submit a Rating for a Movie.  
-		Insert a username, movie title, and valid rating (integer from 1 to 10). The site will return an error code to help users adjust their ratings. This information will be saved and added to the *Users* and *Ratings* tables in ***movieratings.db***.    
+		- Insert a username, movie title, and valid rating (integer from 1 to 10). The site will return an error code to help users adjust their ratings. This information will be saved and added to the *Users* and *Ratings* tables in ***movieratings.db***.     
+		
+		- To view the new users and ratings in the ***movieratings.db***, navigate to the **hw2** directory and run ```sqlite3 < check.sql```. Below is an example where two new users, Josie and Joe Bruin, rate a few movies.  
+
+![](hw2/screenshots/question3_ex_tables.png?raw=true "User and Rating Table Examples")
 
 
 ## Question 4 and Extra Credit 2
