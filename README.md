@@ -49,7 +49,9 @@ A similar graphic can be viewed at the following: ***plotly_dashboard.html***. U
 
 ### Third Party API (Extra Credit 5)  
 
-In the **extra_credit** directory, run ```python3 app.py```. This will open a movie search using OMDB's API as well as a free API, QRcode Monkey. On this page, a user can type in any movie title (Note: this search is not case or spelling sensitive like the flask app in question 3). 
+In the **extra_credit** directory, run ```python3 app.py```. This will open a different kind of movie search using OMDB's API as well as QRcode Monkey, a free API with documentation found at https://www.qrcode-monkey.com/qr-code-api-with-logo/. 
+
+On this page, a user can type in any movie title (Note: this search is not case or spelling sensitive like the flask app in question 3). 
 
 ![](hw2/screenshots/extra/search_screen.png?raw=true "Initial Search Screen")
 
@@ -61,9 +63,9 @@ Once a user locates the movie of interest, clicking on the poster will bring the
 
 ![](hw2/screenshots/extra/json_info.png?raw=true "Example Additional JSON Information")
 
-In addition to this detailed movie JSON, the API will also save an QR code image to the user's machine. Scanning the code will open a JSON of the movie details on their phone. 
+In addition to this detailed movie JSON, the API will also save a QR code image to the user's machine. Scanning the code will open a JSON of the movie details on their phone. 
 
-![](hw2/sextra_credit/SearchResultQR.png?raw=true "Example QR Code")
+![](hw2/extra_credit/SearchResultQR.png?raw=true "Example QR Code")
 
 
 # Problem Set 1
