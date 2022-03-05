@@ -16,6 +16,8 @@ When it comes to the release year constraint for the *Movies* table, all movies 
 
 Using Terminal, navigate inside the **flask_app_code** directory and run  ```flask run```. 
 
+![](hw2/screenshots/flask_home_page.png?raw=true "OMDB App Home Page")
+
 There are two functionalities on this API:  
 
 **1) Search for a Movie.**  
