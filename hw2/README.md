@@ -35,7 +35,7 @@ User can insert a username, movie title, and rating (integer from 1 to 10). The 
 
 ## Question 4 
 
-To create the scatterplot and barchart shown below, run ```python3 plots.py``` to create ***matplotlib_plot.png***. 
+To create the scatterplot and barchart shown below, run ```python3 plots.py``` in the **plots** folder to create ***matplotlib_plot.png***. 
 
 ### Matplotlib 
 ![](matplotlib_plot.png?raw=true "Matplot Graph")
