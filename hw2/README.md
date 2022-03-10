@@ -67,4 +67,4 @@ Once a user locates the movie of interest, clicking on the poster will bring the
 
 In addition to this detailed movie JSON, the API will also save a QR code image to the user's machine. Scanning the code will open a JSON of the movie details on their phone. 
 
-![](extra_credit/SearchResultQR.png?raw=true "Example QR Code")
+![](extra_credit/SearchResultQR.png?raw=true "Example QR Code"| width=100)
