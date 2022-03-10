@@ -14,8 +14,8 @@ The 'Hello World' Flask project is deployed here: http://stats418hello505119082w
 
 After installing VirtualBox 6.1 on my Mac OS, I then setup a Linux environment using the latest LTS version of Ubuntu. 
 
-![](hw1/q3/VirtualBox_screenshot.png?raw=true "VirtualBox_setup")
-![](hw1/q3/screenshot.png?raw=true "Linux_environment"). 
+![](q3/VirtualBox_screenshot.png?raw=true "VirtualBox_setup")
+![](q3/screenshot.png?raw=true "Linux_environment"). 
 
 In the Linux command line, ```./setup.sh``` will install all necessary packages. A copy of this script can be found in q3 directory. 
 
