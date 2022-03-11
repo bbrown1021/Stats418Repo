@@ -64,19 +64,19 @@ Unfortunately, my computer does not have the computational power to run the abov
 In the ```ExtraCredit.ipynb``` file, the OpenCv library is utilized to perform various transformations on images in the CIFAR-10 test dataset. The following images can be found in the **images/opencv** directory:  
 
 **Original Image**  
-![](hw3/images/opencv/original.png?raw=true "Original")
+![](hw3/images/opencv/original.png?raw=true "Original")    
 **Vertical Shift**  
-![](hw3/images/opencv/vertical.png?raw=true "Vertical")
+![](hw3/images/opencv/vertical.png?raw=true "Vertical")    
 **Horizontal Shift**  
-![](hw3/images/opencv/horizontal.png?raw=true "Horizontal")
+![](hw3/images/opencv/horizontal.png?raw=true "Horizontal")    
 **90 Degree Rotation**   
-![](hw3/images/opencv/90.png?raw=true "90 degree rotation")
+![](hw3/images/opencv/90.png?raw=true "90 degree rotation")    
 **180 Degree Rotation**   
-![](hw3/images/opencv/180.png?raw=true "180 degree rotation")
+![](hw3/images/opencv/180.png?raw=true "180 degree rotation")    
 **270 Degree Rotation**   
-![](hw3/images/opencv/270.png?raw=true "270 degree rotation")
+![](hw3/images/opencv/270.png?raw=true "270 degree rotation")    
 **Diagonal Shift**   
-![](hw3/images/opencv/diag.png?raw=true "Diagonal Shift")
+![](hw3/images/opencv/diag.png?raw=true "Diagonal Shift")    
 
 ### Extra Credit 2
 
