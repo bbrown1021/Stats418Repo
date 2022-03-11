@@ -2,15 +2,17 @@
 
 Britney Brown (505-119-082)
 
+Below you will find a summary of all work for problem sets 1-3. There are individual README files in each ```hw1```, ```hw2```, and ```hw3``` directories.
+
 ## Problem Set 3
 
 ### Question 1
 
 The CIFAR-10 dataset analysis can be found in the following jupyter notebook: ```CIFAR10_Analysis.ipynb```:  
 - dataset read in using two methods
-  - dictionary with data array (I performed a manual transformation to view the image). 
+  - dictionary with data array (performed a manual transformation to view the image in RGB channel as well). 
   - keras pre-loaded package
-- training/testing split is approximately 80-20 (50,000 / 60,000). 
+- training/testing split is approximately 80-20 (50,000 training/ 60,000 testing). 
 - scale the data from 0 to 1 (divide by maximum 255 for RGB scale). 
 - perform dimension reduction
   - PCA  
@@ -61,26 +63,26 @@ Unfortunately, my computer does not have the computational power to run the abov
 
 ### Extra Credit 1
 
-In the ```ExtraCredit.ipynb``` file, the OpenCv library is utilized to perform various transformations on images in the CIFAR-10 test dataset. The following images can be found in the **images/opencv** directory:  
+In the ```ExtraCredit.ipynb``` file, the OpenCv library is utilized to perform various transformations on images in the CIFAR-10 test dataset. The following images can be found in the ```images/opencv``` directory:  
 
 **Original Image**  
-![](hw3/images/opencv/original.png?raw=true "Original")    
+![](hw3/images/opencv/original.png?raw=true "Original")     
 **Vertical Shift**  
-![](hw3/images/opencv/vertical.png?raw=true "Vertical")    
+![](hw3/images/opencv/vertical.png?raw=true "Vertical")     
 **Horizontal Shift**  
-![](hw3/images/opencv/horizontal.png?raw=true "Horizontal")    
+![](hw3/images/opencv/horizontal.png?raw=true "Horizontal")     
 **90 Degree Rotation**   
-![](hw3/images/opencv/90.png?raw=true "90 degree rotation")    
+![](hw3/images/opencv/90.png?raw=true "90 degree rotation")     
 **180 Degree Rotation**   
-![](hw3/images/opencv/180.png?raw=true "180 degree rotation")    
+![](hw3/images/opencv/180.png?raw=true "180 degree rotation")     
 **270 Degree Rotation**   
-![](hw3/images/opencv/270.png?raw=true "270 degree rotation")    
+![](hw3/images/opencv/270.png?raw=true "270 degree rotation")     
 **Diagonal Shift**   
-![](hw3/images/opencv/diag.png?raw=true "Diagonal Shift")    
+![](hw3/images/opencv/diag.png?raw=true "Diagonal Shift")     
 
 ### Extra Credit 2
 
-Also located in the ```ExtraCredit.ipynb``` file, you will find a text mining example using the *nltk* package and a training subset of the *newsgroup* dataset, saved as *20_newsgroup.csv* in the **hw3** directory. Before cleaning the tokens in this corpus, we have a total of 3,056,183 unique words. Once we remove punctuation, stop words, infrequent words (in less than 5 documents), and perform stemming, we have 445,000 terms remaining. Finally, we report the top 10 words with the highest TF-IDF values averaged over all documents belonging to each class. Here is one example:
+Also located in the ```ExtraCredit.ipynb``` file, you will find a text mining example using the *nltk* package and a training subset of the *newsgroup* dataset, saved as ```20_newsgroup.csv``` in the ```hw3``` directory. Before cleaning the tokens in this corpus, we have a total of 3,056,183 unique words. Once we remove punctuation, stop words, infrequent words (in less than 5 documents), and perform stemming, we have 445,000 terms remaining. Finally, we report the top 10 words with the highest TF-IDF values averaged over all documents belonging to each class. Here is one example:
 
 ![](hw3/images/ec.png?raw=true "Extra Credit Example")
 
