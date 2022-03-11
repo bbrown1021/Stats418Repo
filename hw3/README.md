@@ -19,7 +19,7 @@ Here is a visualization on how these three methods are different. Note that only
 
 PCA extracts important components from a large set of variables by calculating and ranking the importance of features/dimensions by using SVD. Therefore, since SVD is also a method used on covariance matrix to calculate and rank the importance of the features, PCA is the truncated SVD method on centered data, hence why the visuals appear similar. In comparison to PCA which captures components by variance explained, the NMF method essentially selects metafeatures that represent the main characteristics of the whole dataset.  
 
-![] (images/question1.png?raw=true "PCAvSVDvNMF")
+![](images/question1.png?raw=true "PCAvSVDvNMF")
 
 Finally, when it comes to extracting better features, there are a multitude of other methods such as:  
 - ICA (independent component method) which assumes each sample of data is a mixture of independent features and aims to find independent components  
@@ -62,20 +62,20 @@ In the ```ExtraCredit.ipynb``` file, the OpenCv library is utilized to perform v
 **Original Image**  
 ![](images/opencv/original.png?raw=true "Original")
 **Vertical Shift**  
-![] (images/opencv/vertical.png?raw=true "Vertical")
+![](images/opencv/vertical.png?raw=true "Vertical")
 **Horizontal Shift**  
-![] (images/opencv/horizontal.png?raw=true "Horizontal")
+![](images/opencv/horizontal.png?raw=true "Horizontal")
 **90 Degree Rotation**   
-![] (images/opencv/90.png?raw=true "90 degree rotation")
+![](images/opencv/90.png?raw=true "90 degree rotation")
 **180 Degree Rotation**   
-![] (images/opencv/180.png?raw=true "180 degree rotation")
+![](images/opencv/180.png?raw=true "180 degree rotation")
 **270 Degree Rotation**   
-![] (images/opencv/270.png?raw=true "270 degree rotation")
+![](images/opencv/270.png?raw=true "270 degree rotation")
 **Diagonal Shift**   
-![] (images/opencv/diag.png?raw=true "Diagonal Shift")
+![](images/opencv/diag.png?raw=true "Diagonal Shift")
 
 ### Extra Credit 2
 
 Also located in the ```ExtraCredit.ipynb``` file, you will find a text mining example using the *nltk* package and a training subset of the *newsgroup* dataset, saved as *20_newsgroup.csv* in the **hw3** directory. Before cleaning the tokens in this corpus, we have a total of 3,056,183 unique words. Once we remove punctuation, stop words, infrequent words (in less than 5 documents), and perform stemming, we have 445,000 terms remaining. Finally, we report the top 10 words with the highest TF-IDF values averaged over all documents belonging to each class. Here is one example:
 
-![] (images/ec.png?raw=true "Extra Credit Example")
+![](images/ec.png?raw=true "Extra Credit Example")
